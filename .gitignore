@@ -60,5 +60,8 @@ typings/
 # Distribution Folder
 dist/
 
+# Uploads Folder
+uploads/
+
 # IDE Folder
 .vscode

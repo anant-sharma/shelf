@@ -2,6 +2,8 @@
  * This file contins the config
  * required to run the app
  */
+import { mkdirSync, statSync } from 'fs';
+import * as path from 'path';
 
  /**
   * App Config
@@ -9,6 +11,11 @@
 export const appConfig =  {
     port: 21000,
 };
+
+/**
+ * Auth Enabled
+ */
+export const authEnabled = false;
 
 /**
  * DB Connection
@@ -38,3 +45,12 @@ export const paths = {
         '/auth',
     ],
 };
+
+/**
+ * Uploads
+ */
+export const uploads = {
+    directory: path.resolve('uploads'),
+};
+// tslint:disable-next-line:no-empty
+try { mkdirSync(uploads.directory); } catch (e) {}
