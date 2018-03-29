@@ -1,2 +1,2 @@
-# node-boilerplate
-Boilerplate for nodejs applications
+# shelf
+A simple file storage system

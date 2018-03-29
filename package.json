@@ -1,7 +1,7 @@
 {
-  "name": "node-boilerplate",
+  "name": "shelf",
   "version": "1.0.0",
-  "description": "Boilerplate for nodejs applications",
+  "description": "A simple file storage system.",
   "main": "src/index.js",
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anant-sharma/node-boilerplate.git"
+    "url": "git+https://github.com/anant-sharma/shelf.git"
   },
   "author": "Anant Sharma <anantatnet@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anant-sharma/node-boilerplate/issues"
+    "url": "https://github.com/anant-sharma/shelf/issues"
   },
-  "homepage": "https://github.com/anant-sharma/node-boilerplate#readme",
+  "homepage": "https://github.com/anant-sharma/shelf#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
