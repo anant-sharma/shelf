@@ -5,7 +5,7 @@ import * as express from 'express';
 import { existsSync } from 'fs';
 import * as multer from 'multer';
 import { v4 as uuid } from 'uuid';
-import { uploads } from '../../../../config/config';
+import { appConfig, uploads } from '../../../../config/config';
 
 /**
  * Initialize Router
@@ -66,6 +66,7 @@ router.get('/:id', (req: express.Request, res: express.Response) => {
         res.status(200).sendFile(filePath);
 
     } catch (e) {
+        console.trace(e);
         res.status(400).json({
             error: e,
             status: 'error',
@@ -96,6 +97,14 @@ router.put('/', upload.single('file'), (req: express.Request, res: express.Respo
         } = file;
 
         /**
+         * Construct public url
+         */
+        const {
+            host,
+        } = appConfig;
+        const url = `${host}/api/v1/shelf/${filename}`;
+
+        /**
          * Send response
          */
         res.status(200).json({
@@ -104,11 +113,13 @@ router.put('/', upload.single('file'), (req: express.Request, res: express.Respo
                 filename,
                 originalname,
                 size,
+                url,
             },
             status: 'success',
         });
 
     } catch (e) {
+        console.trace(e);
         res.status(400).json({
             error: e,
             status: 'error',

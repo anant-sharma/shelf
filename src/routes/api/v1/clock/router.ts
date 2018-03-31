@@ -28,6 +28,7 @@ router.get('/', (req: express.Request, res: express.Response, next: express.Next
             timestamp,
         });
     } catch (e) {
+        console.trace(e);
         res.status(400).json({
             error: e,
         });

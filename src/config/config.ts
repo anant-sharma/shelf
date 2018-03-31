@@ -9,7 +9,8 @@ import * as path from 'path';
   * App Config
   */
 export const appConfig =  {
-    port: 21000,
+    host: 'http://shelf.chipserver.ml',
+    port: 22000,
 };
 
 /**
