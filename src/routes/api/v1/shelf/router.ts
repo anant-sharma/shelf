@@ -84,7 +84,7 @@ router.put('/', upload.single('file'), (req: express.Request, res: express.Respo
      * Get File Details
      */
     try {
-        const { file } = req;
+        const { file, body } = req;
 
         /**
          * Extract file attributes
@@ -108,6 +108,7 @@ router.put('/', upload.single('file'), (req: express.Request, res: express.Respo
          * Send response
          */
         res.status(200).json({
+            body,
             file : {
                 encoding,
                 filename,
